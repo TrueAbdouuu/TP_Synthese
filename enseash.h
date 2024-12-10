@@ -13,13 +13,18 @@
 // Constants
 #define WELCOME_MESSAGE "Welcome to ENSEA Tiny Shell.\nType 'exit' to quit.\n"
 #define PROMPT "enseash % "
-#define GOODBYE_MESSAGE "Bye bye...\n"
 #define INPUT_BUFFER_SIZE 128
+#define EXIT_MESSAGE "Bye bye...\n"
+#define STATUS_SIZE 50
 
 // Function Prototypes
-void display_welcome_message();  // Fonction pour afficher le message de bienvenue
-void display_prompt();            // Fonction pour afficher le prompt
-int read_input(char *input);      // Fonction pour lire l'entrée de l'utilisateur
-void execute_command(const char *input);  // Fonction pour exécuter la commande et afficher le code de retour et le temps d'exécution
+void display_welcome_message();
+void display_prompt();
+int read_input(char *input);
+
+int execute_command(char *command, long *elapsed_time_ms) ;
+
+
+void get_command_status(int status,long elapsed_time_ms, char *status_string, size_t size);
 
 #endif // ENSEASH_H
